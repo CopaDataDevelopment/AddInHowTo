@@ -36,8 +36,6 @@ namespace POZYTON_API
 
                 if (_driverContext.OpenDriver(10))
                 {
-                    _driverContext.DumpNodeInfo("DrvConfig.Options");
-
                     _driverContext.ModifyCommonProperties();
                     _driverContext.ModifyCOMProperties();
           
@@ -73,20 +71,6 @@ namespace POZYTON_API
       }
 
       _log.FunctionExitMessage();
-
-      // add a new connection (not using an index)
-      if (_driverContext.AddNode("DrvConfig.Connections"))
-      {
-        // this connection remains with default values
-
-        idxI += 1;
-        // add a new connection - uses an index
-        if (_driverContext.AddNode("DrvConfig.Connections[" + idxI.ToString() + "]"))
-        {
-          // this connection gets the minimum information necessary to be accepted by the driver
-          ModifyConnection(idxI);
-        }
-      }
     }
 
     private void ModifyConnection(uint connIndex)
