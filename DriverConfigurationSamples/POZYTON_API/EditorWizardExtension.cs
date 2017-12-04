@@ -83,7 +83,7 @@ namespace POZYTON_API
 
       _log.FunctionEntryMessage($"modify {connIndex}. connection");
 
-      _driverContext.SetUnsignedProperty(connNamePrefix + "NetAdress", 0, 0, 999, true);
+      _driverContext.SetUnsignedProperty(connNamePrefix + "NetAddress", 0, 0, 999, true);
       _driverContext.SetStringProperty(connNamePrefix + "ConnectionName", "DeviceA" + connIndexString, true);
       _driverContext.SetStringProperty(connNamePrefix + "SerialNumber", "333.7777777" + connIndexString, true);
 
