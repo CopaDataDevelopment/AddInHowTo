@@ -85,8 +85,18 @@ namespace DriverCommon
 
         public void GetNodeInfo(string propertyName, out string[] dynamicPropertyNames, out uint count)
         {
+
+          try
+          {
             dynamicPropertyNames = _driverObject.GetDynamicProperties(propertyName);
             count = Convert.ToUInt32(_driverObject.GetDynamicProperty(propertyName));
+          }
+          catch (Exception ex)
+          {
+            _log.ExpectionMessage($"Could not get node info {propertyName}", ex);
+            count = 0;
+            dynamicPropertyNames = new string[0];
+          }
         }
 
         public bool AddNode(string propertyName)

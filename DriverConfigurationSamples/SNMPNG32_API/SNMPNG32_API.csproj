@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" InitialTargets="CheckPrerequisites">
   <PropertyGroup>
-    <ProjectGuid>{49A63CA4-8083-4D01-A81F-3F500F36F12F}</ProjectGuid>
+    <ProjectGuid>{13900A59-6429-48DA-B768-3CED8C69F062}</ProjectGuid>
     <ProjectTypeGuids>{4422A145-E09F-43FE-9F49-8C43BE48D633};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
-    <RootNamespace>BACNetNG_API</RootNamespace>
-    <AssemblyName>BACNetNG_API</AssemblyName>
+    <RootNamespace>SNMPNG32_API</RootNamespace>
+    <AssemblyName>SNMPNG32_API</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <NoWin32Manifest>False</NoWin32Manifest>
