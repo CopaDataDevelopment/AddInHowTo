@@ -101,20 +101,6 @@ namespace DNP3_TG_API
       }
 
       _log.FunctionExitMessage();
-
-      // add a new connection (not using an index)
-      if (_driverContext.AddNode("DrvConfig.Connections"))
-      {
-        // this connection remains with default values
-
-        idxI += 1;
-        // add a new connection - uses an index
-        if (_driverContext.AddNode("DrvConfig.Connections[" + idxI.ToString() + "]"))
-        {
-          // this connection gets the minimum information necessary to be accepted by the driver
-          ModifyConnection(idxI);
-        }
-      }
     }
 
     private void ModifyConnection(uint connIndex)
@@ -128,7 +114,7 @@ namespace DNP3_TG_API
       _log.FunctionEntryMessage($"modify {connIndex}. connection");
 
       _driverContext.SetUnsignedProperty(connNamePrefix + "NetAdress", 1, 0, 999, true);
-      _driverContext.SetStringProperty(connNamePrefix + "FriendlyName", "Name_" + connIndexString, true);
+      _driverContext.SetStringProperty(connNamePrefix + "FriendlyName", "Name_TEST_" + connIndexString, true);
       _driverContext.SetUnsignedProperty(connNamePrefix + "LinkId", 53453, 0, 65535, true);
       _driverContext.SetUnsignedProperty(connNamePrefix + "SrcAddress", 53453, 0, 65535, true);
       _driverContext.SetUnsignedProperty(connNamePrefix + "DstAddress", 4, 0, 65535, true);
