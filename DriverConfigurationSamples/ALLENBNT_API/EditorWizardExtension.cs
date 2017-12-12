@@ -119,7 +119,8 @@ namespace ALLENBNT_API
 
       _log.FunctionEntryMessage($"modify {connIndex}. routing");
 
-      _driverContext.SetUnsignedProperty(connNamePrefix + "VariableAddress", 0, 0, 999, true);
+      // IMPORTANT: VariableAddress NEEDS to be unique value key or entry will be overwritten!!!
+      _driverContext.SetUnsignedProperty(connNamePrefix + "VariableAddress", connIndex, 0, 999, true);
       _driverContext.SetUnsignedProperty(connNamePrefix + "IPAddress", 127, 0, 999, true);
       _driverContext.SetSignedProperty(connNamePrefix + "DHRIOSlot", 0, 0, 999, true);
       _driverContext.SetCharacterProperty(connNamePrefix + "Channel", 'B');
