@@ -90,6 +90,7 @@ namespace DNP3_TG_API
     {
       _log.FunctionEntryMessage("modify connections");
 
+      //connections
       string[] propItems;
       uint connCount;
       _driverContext.GetNodeInfo("DrvConfig.Connections", out propItems, out connCount);
@@ -98,6 +99,17 @@ namespace DNP3_TG_API
       for (idxI = 0; idxI < connCount; idxI++)
       {
         ModifyConnection(idxI);
+
+        // links
+        string[] propItemsLinks;
+        uint connCountLinks;
+        _driverContext.GetNodeInfo("DrvConfig.LinkConfig", out propItemsLinks, out connCountLinks);
+
+        uint idxLink;
+        for (idxLink = 0; idxLink < connCountLinks; idxLink++)
+        {
+          ModifyConnectionLink(idxI, idxLink);
+        }
       }
 
       _log.FunctionExitMessage();
@@ -148,6 +160,28 @@ namespace DNP3_TG_API
        _driverContext.SetUnsignedProperty(connNamePrefix + "FileTransferTimeout", 5, 0, 99999999, true);
       _driverContext.SetStringProperty(connNamePrefix + "FileTransferDir", "", true);
       _driverContext.SetStringProperty(connNamePrefix + "FileTransferRevDir", "", true);
+
+      _log.FunctionExitMessage();
+    }
+
+    private void ModifyConnectionLink(uint connIndex, uint linkIndex)
+    {
+      string connlinkNamePrefix;
+      string connIndexString = connIndex.ToString();
+      string linkIndexString = linkIndex.ToString();
+      connlinkNamePrefix = "DrvConfig.LinkConfig[" + linkIndexString + "].";
+
+      linkIndex = linkIndex + 1;
+
+      _log.FunctionEntryMessage($"modify {linkIndex}. link");
+
+      _driverContext.SetSignedProperty(connlinkNamePrefix + "Type", 0, Int32.MinValue, Int32.MaxValue, false);
+      _driverContext.SetStringProperty(connlinkNamePrefix + "IPAddressPrimary", "API_IP1" + connIndexString, true);
+      _driverContext.SetStringProperty(connlinkNamePrefix + "IPAddressSecondary", "API_IP2" + connIndexString, true);
+      _driverContext.SetSignedProperty(connlinkNamePrefix + "PortPrimary", 0, Int32.MinValue, Int32.MaxValue, false);
+      _driverContext.SetSignedProperty(connlinkNamePrefix + "PortSecondary", 0, Int32.MinValue, Int32.MaxValue, false);
+      _driverContext.SetUnsignedProperty(connlinkNamePrefix + "ReconnectDelay", 1, 0, 999, true);
+      _driverContext.SetUnsignedProperty(connlinkNamePrefix + "DisconnectDelay", 1, 0, 999, true);     
 
       _log.FunctionExitMessage();
     }
