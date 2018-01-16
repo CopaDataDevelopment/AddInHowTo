@@ -96,13 +96,13 @@ namespace STRATONNG_API
       _driverContext.SetStringProperty(connNamePrefix + "ConnectionName", "API_TestName" + connIndexString, true);
       _driverContext.SetStringProperty(connNamePrefix + "PrimaryIPAdr", "API_TestPrimary" + connIndexString, true);
       _driverContext.SetStringProperty(connNamePrefix + "SecondaryIPAdr", "API_TestSecondary" + connIndexString, true);
-      _driverContext.SetUnsignedProperty(connNamePrefix + "PrimaryTCPPort", 0, 0, 999, true);
-      _driverContext.SetUnsignedProperty(connNamePrefix + "SecondaryTCPPort", 0, 0, 999, true);
-      _driverContext.SetUnsignedProperty(connNamePrefix + "Timeout", 0, 0, 999, true);
-      _driverContext.SetUnsignedProperty(connNamePrefix + "ErrorWaitTime", 0, 0, 999, true);
+      _driverContext.SetUnsignedProperty(connNamePrefix + "PrimaryTCPPort", 1, 0, 999, true);
+      _driverContext.SetUnsignedProperty(connNamePrefix + "SecondaryTCPPort", 1, 0, 999, true);
+      _driverContext.SetUnsignedProperty(connNamePrefix + "Timeout", 5000, 0, 10000, true);
+      _driverContext.SetUnsignedProperty(connNamePrefix + "ErrorWaitTime", 1, 0, 999, true);
       _driverContext.SetUnsignedProperty(connNamePrefix + "MultipleConnections", 5, 0, 999, true);
       _driverContext.SetBooleanProperty(connNamePrefix + "EventConnection");
-      _driverContext.SetUnsignedProperty(connNamePrefix + "MaxWriteRequestLen", 512, 0, 999, true); // 512 or 1024
+      _driverContext.SetUnsignedProperty(connNamePrefix + "MaxWriteRequestLen", 1024, 0, 1024, true); // 512 or 1024
       _driverContext.SetBooleanProperty(connNamePrefix + "IgnorePLCTimestamps");
 
       _log.FunctionExitMessage();

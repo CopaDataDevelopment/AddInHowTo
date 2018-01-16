@@ -36,7 +36,7 @@ namespace DNP3_TG_API
 
                 if (_driverContext.OpenDriver(10))
                 {
-                    _driverContext.DumpNodeInfo("DrvConfig.Options");
+                   _driverContext.DumpNodeInfo("DrvConfig.Options");
 
                     _driverContext.ModifyCommonProperties();
                     _driverContext.ModifyCOMProperties();
@@ -125,7 +125,7 @@ namespace DNP3_TG_API
 
       _log.FunctionEntryMessage($"modify {connIndex}. connection");
 
-      _driverContext.SetUnsignedProperty(connNamePrefix + "NetAdress", 1, 0, 999, true);
+      _driverContext.SetUnsignedProperty(connNamePrefix + "NetAddress", 1, 0, 999, true);
       _driverContext.SetStringProperty(connNamePrefix + "FriendlyName", "Name_TEST_" + connIndexString, true);
       _driverContext.SetUnsignedProperty(connNamePrefix + "LinkId", 53453, 0, 65535, true);
       _driverContext.SetUnsignedProperty(connNamePrefix + "SrcAddress", 53453, 0, 65535, true);
