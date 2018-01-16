@@ -42,6 +42,7 @@ namespace SNMPNG32_API
                   ModifyOptions();
                   ModifyAgents();
                   ModifyMibItems();
+                  ModifyTrapService();
 
                   _driverContext.CloseDriver();
 
@@ -144,6 +145,17 @@ namespace SNMPNG32_API
       _driverContext.SetUnsignedProperty(mibItemNamePrefix + "Datatype", 0, 0, 65535, true);
       _driverContext.SetStringProperty(mibItemNamePrefix + "StringOid", "StringOid #" + itemIndex.ToString(), true);
       _driverContext.SetStringProperty(mibItemNamePrefix + "NumOid", "1.3.6." + itemIndex.ToString(), true);
+
+      _log.FunctionExitMessage();
+    }
+
+    private void ModifyTrapService()
+    {
+      _log.FunctionEntryMessage("modify trap service config");
+
+      _driverContext.SetUnsignedProperty("DrvConfig.TrapService[0].PollingInterval", 3333, 5555);
+      _driverContext.SetUnsignedProperty("DrvConfig.TrapService[0].PollingRetries", 7, 8);
+      _driverContext.SetUnsignedProperty("DrvConfig.TrapService[0].PollingRetryTimeout", 1111, 2222);
 
       _log.FunctionExitMessage();
     }
