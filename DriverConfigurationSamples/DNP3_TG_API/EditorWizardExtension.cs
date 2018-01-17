@@ -127,7 +127,7 @@ namespace DNP3_TG_API
 
       _driverContext.SetUnsignedProperty(connNamePrefix + "NetAddress", 1, 0, 999, true);
       _driverContext.SetStringProperty(connNamePrefix + "FriendlyName", "Name_TEST_" + connIndexString, true);
-      _driverContext.SetUnsignedProperty(connNamePrefix + "LinkId", 53453, 0, 65535, true);
+      _driverContext.SetUnsignedProperty(connNamePrefix + "LinkId", 4, 0, 65535, true);
       _driverContext.SetUnsignedProperty(connNamePrefix + "SrcAddress", 53453, 0, 65535, true);
       _driverContext.SetUnsignedProperty(connNamePrefix + "DstAddress", 4, 0, 65535, true);
       _driverContext.SetUnsignedProperty(connNamePrefix + "ReplyTimeout", 10000, 0, 65535, true);
@@ -175,10 +175,11 @@ namespace DNP3_TG_API
 
       _log.FunctionEntryMessage($"modify {linkIndex}. link");
 
+      _driverContext.SetUnsignedProperty(connlinkNamePrefix + "ID", linkIndex+2, 0, 999, true);
       _driverContext.SetSignedProperty(connlinkNamePrefix + "Type", 0, Int32.MinValue, Int32.MaxValue, false);
       _driverContext.SetStringProperty(connlinkNamePrefix + "IPAddressPrimary", "API_IP1" + connIndexString, true);
       _driverContext.SetStringProperty(connlinkNamePrefix + "IPAddressSecondary", "API_IP2" + connIndexString, true);
-      _driverContext.SetSignedProperty(connlinkNamePrefix + "PortPrimary", 0, Int32.MinValue, Int32.MaxValue, false);
+      _driverContext.SetSignedProperty(connlinkNamePrefix + "PortPrimary", (int)linkIndex+2, Int32.MinValue, Int32.MaxValue, false);
       _driverContext.SetSignedProperty(connlinkNamePrefix + "PortSecondary", 0, Int32.MinValue, Int32.MaxValue, false);
       _driverContext.SetUnsignedProperty(connlinkNamePrefix + "ReconnectDelay", 1, 0, 999, true);
       _driverContext.SetUnsignedProperty(connlinkNamePrefix + "DisconnectDelay", 1, 0, 999, true);     
