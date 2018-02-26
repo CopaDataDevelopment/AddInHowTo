@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="771d0e5c-8109-45ef-8e66-1f980ceda017" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/variable-service" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="variable-service.wsdl" MetadataType="Wsdl" ID="fdb27e25-9c90-4470-a92c-7d39152de0bb" SourceId="1" SourceUrl="http://localhost:8080/variable-service?wsdl=wsdl0" />
+    <MetadataFile FileName="variable-service.xsd" MetadataType="Schema" ID="03f917e8-0b5c-4fc5-92dd-3090bbded0e1" SourceId="1" SourceUrl="http://localhost:8080/variable-service?xsd=xsd3" />
+    <MetadataFile FileName="variable-service.disco" MetadataType="Disco" ID="d3df0016-08c1-4a4d-9f9c-7e6cea8a1b8e" SourceId="1" SourceUrl="http://localhost:8080/variable-service?disco" />
+    <MetadataFile FileName="variable-service1.xsd" MetadataType="Schema" ID="f963dc2a-7755-4f59-bb90-7b5144302a26" SourceId="1" SourceUrl="http://localhost:8080/variable-service?xsd=xsd2" />
+    <MetadataFile FileName="variable-service2.xsd" MetadataType="Schema" ID="86905f19-919d-4179-b9be-c8bf4b46db87" SourceId="1" SourceUrl="http://localhost:8080/variable-service?xsd=xsd1" />
+    <MetadataFile FileName="VariableService.wsdl" MetadataType="Wsdl" ID="140f4d35-9fdc-41ac-b10c-42dc5b62c1b7" SourceId="1" SourceUrl="http://localhost:8080/variable-service?wsdl" />
+    <MetadataFile FileName="variable-service3.xsd" MetadataType="Schema" ID="6ae67da7-bc83-4cdf-9199-ae574a51b7f7" SourceId="1" SourceUrl="http://localhost:8080/variable-service?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

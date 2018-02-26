@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://Copadata.AddinSamples.WCFSamples" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://Copadata.AddinSamples.WCFSamples" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://Copadata.AddinSamples.WCFSamples/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/variable-service?xsd=xsd0" namespace="http://Copadata.AddinSamples.WCFSamples" />
+      <xsd:import schemaLocation="http://localhost:8080/variable-service?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/variable-service?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8080/variable-service?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AddinWCFService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IVariableService_GetListOfVariableIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfVariableIds" />
+  </wsdl:message>
+  <wsdl:message name="IVariableService_GetListOfVariableIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfVariableIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVariableService_GetVariableData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVariableData" />
+  </wsdl:message>
+  <wsdl:message name="IVariableService_GetVariableData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVariableDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVariableService_GetAllVariables_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVariables" />
+  </wsdl:message>
+  <wsdl:message name="IVariableService_GetAllVariables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVariablesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IVariableService">
+    <wsdl:operation name="GetListOfVariableIds">
+      <wsdl:input wsam:Action="http://Copadata.AddinSamples.WCFSamples/IVariableService/GetListOfVariableIds" message="tns:IVariableService_GetListOfVariableIds_InputMessage" />
+      <wsdl:output wsam:Action="http://Copadata.AddinSamples.WCFSamples/IVariableService/GetListOfVariableIdsResponse" message="tns:IVariableService_GetListOfVariableIds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVariableData">
+      <wsdl:input wsam:Action="http://Copadata.AddinSamples.WCFSamples/IVariableService/GetVariableData" message="tns:IVariableService_GetVariableData_InputMessage" />
+      <wsdl:output wsam:Action="http://Copadata.AddinSamples.WCFSamples/IVariableService/GetVariableDataResponse" message="tns:IVariableService_GetVariableData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVariables">
+      <wsdl:input wsam:Action="http://Copadata.AddinSamples.WCFSamples/IVariableService/GetAllVariables" message="tns:IVariableService_GetAllVariables_InputMessage" />
+      <wsdl:output wsam:Action="http://Copadata.AddinSamples.WCFSamples/IVariableService/GetAllVariablesResponse" message="tns:IVariableService_GetAllVariables_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
