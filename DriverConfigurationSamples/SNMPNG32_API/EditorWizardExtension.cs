@@ -54,7 +54,7 @@ namespace SNMPNG32_API
               }
               catch (Exception ex)
             {
-                _log.ExpectionMessage($"An exception has been thrown: {ex.Message}", ex);
+                _log.ExpectionMessage("An exception has been thrown: {0}", ex.Message);
                 throw;
             }
         }

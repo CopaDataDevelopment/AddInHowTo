@@ -70,7 +70,7 @@ namespace AddInSampleLibrary.Communication
 
                 if (ServiceProxy == null)
                 {
-                    string url = $"ipc://{_addInName}/{wellknownName}";
+                	string url = String.Format("ipc://{0}/{1}",_addInName,wellknownName);
                     ServiceProxy = (TServiceInterface)Activator.GetObject(typeof(TServiceInterface), url);
                 }
             }

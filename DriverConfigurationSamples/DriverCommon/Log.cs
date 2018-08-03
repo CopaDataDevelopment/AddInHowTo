@@ -22,28 +22,28 @@ namespace DriverCommon
 
         public void Message(string msgText)
         {
-            string text = $" - [{_driverApiName}]: {msgText}";
+        	string text = String.Format(" - [{0}]: {1}",_driverApiName,msgText);
             _editorApplication.DebugPrint(text, DebugPrintStyle.Standard);
             Logger.Info(text);
         }
 
         public void InvalidPropertyValueMessage(string propName)
         {
-            string text = $" - [{_driverApiName}]:     [{propName}] is invalid (and remains invalid)";
+        	string text = String.Format(" - [{0}]:     [{1}] is invalid (and remains invalid)",_driverApiName,propName);
             _editorApplication.DebugPrint(text, DebugPrintStyle.Standard);
             Logger.Warn(text);
         }
 
         public void ExpectionMessage(string msgText, Exception ex)
         {
-            string text = $" - [{_driverApiName}]:     [{msgText}] (Exception: {ex.Message})";
+        	string text = String.Format(" - [{0}]:     [{1}] (Exception: {2})",_driverApiName,msgText,ex.Message);
             _editorApplication.DebugPrint(text, DebugPrintStyle.Standard);
             Logger.Error(ex, text);
         }
 
         public void FunctionEntryMessage(string msgText)
         {
-            _editorApplication.DebugPrint($" - [{_driverApiName}]:   {msgText}", DebugPrintStyle.Standard);
+        	_editorApplication.DebugPrint(String.Format(" - [{0}]:   {1}",_driverApiName,msgText), DebugPrintStyle.Standard);
         }
         public void FunctionExitMessage()
         {
@@ -51,7 +51,9 @@ namespace DriverCommon
    
         public void PropertyModifiedMessage(string propName, object orgValue, object newValue, string propType)
         {
-            _editorApplication.DebugPrint($" - [{_driverApiName}]:    [{propName}] from [{orgValue}] to [{newValue}] (value type: {propType})", DebugPrintStyle.Standard);
+            _editorApplication.DebugPrint(
+        		String.Format(" - [{0}]:    [{1}] from [{2}] to [{3}] (value type: {4})",
+        		              _driverApiName,propName,orgValue,newValue,propType), DebugPrintStyle.Standard);
         }
      }
 }

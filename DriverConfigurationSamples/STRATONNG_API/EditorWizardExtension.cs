@@ -13,8 +13,7 @@ namespace STRATONNG_API
         private Log _log;
         private DriverContext _driverContext;
 
-        const string DriverIdent = "stratonNG";
-        const string DriverName = "straton NG Treiber";
+        const string DriverFileName = "STRATONNG";
         const string XmlSuffixBefore = "before";
         const string XmlSuffixAfter = "after";
 
@@ -22,11 +21,11 @@ namespace STRATONNG_API
 
         public void Run(IEditorApplication context, IBehavior behavior)
         {
-            _log = new Log(context, DriverIdent);
+            _log = new Log(context, DriverFileName);
 
             try
             {
-                _driverContext = new DriverContext(context, _log, DriverName, false);
+                _driverContext = new DriverContext(context, _log, DriverFileName, false);
 
                 // enter your code which should be executed when starting the SCADA Editor Wizard
 
@@ -52,7 +51,7 @@ namespace STRATONNG_API
             }
             catch (Exception ex)
             {
-                _log.ExpectionMessage($"An exception has been thrown: {ex.Message}", ex);
+            	_log.ExpectionMessage(String.Format("An exception has been thrown: {0}",ex.Message), ex);
                 throw;
             }
         }
@@ -91,7 +90,7 @@ namespace STRATONNG_API
 
       connIndex = connIndex + 1;
 
-      _log.FunctionEntryMessage($"modify {connIndex}. connection");
+      _log.FunctionEntryMessage(String.Format("modify {0}. connection",connIndex));
 
       _driverContext.SetStringProperty(connNamePrefix + "ConnectionName", "API_TestName" + connIndexString, true);
       _driverContext.SetStringProperty(connNamePrefix + "PrimaryIPAdr", "API_TestPrimary" + connIndexString, true);
