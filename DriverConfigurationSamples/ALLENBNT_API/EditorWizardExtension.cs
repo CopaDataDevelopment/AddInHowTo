@@ -102,7 +102,7 @@ namespace ALLENBNT_API
 
       _driverContext.SetUnsignedProperty(connNamePrefix + "NetAddress", 7, 0, 999, true);
       _driverContext.SetUnsignedProperty(connNamePrefix + "DataTableAddress", 7, 0, 999, true);
-      _driverContext.SetUnsignedProperty(connNamePrefix + "DrvObjType", 7, 0, 999, true);
+      _driverContext.SetUnsignedProperty(connNamePrefix + "DrvObjType", 3, 0, 999, true);
       _driverContext.SetUnsignedProperty(connNamePrefix + "DataNumber", 7, 0, 999, true);
       _driverContext.SetUnsignedProperty(connNamePrefix + "ElementOffset", 7, 0, 999, true);
 
